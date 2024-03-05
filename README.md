@@ -1,0 +1,2 @@
+# Dailyuse
+Simple Landing Page 
