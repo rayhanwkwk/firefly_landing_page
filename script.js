@@ -55,3 +55,23 @@ function topFunction() {
 window.onbeforeunload = function () {
   window.location.href = "#home";
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+  var icon = document.getElementById('cart-icon');
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition === 0) {
+    icon.style.color = 'white'; // Ubah warna ikon menjadi putih saat halaman dimuat
+  }
+});
+
+window.addEventListener('scroll', function() {
+  var icon = document.getElementById('cart-icon');
+  var scrollPosition = window.scrollY;
+
+  if (scrollPosition === 0) {
+    icon.style.color = 'white'; // Ubah warna ikon menjadi putih saat scroll ke atas
+  } else {
+    icon.style.color = 'black'; // Ubah warna ikon menjadi hitam saat scroll ke bawah
+  }
+});

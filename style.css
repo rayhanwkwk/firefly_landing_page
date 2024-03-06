@@ -160,7 +160,7 @@ img {
 }
 
 .shesh {
-  max-width: 100%; /* Maksimum lebar kotak gambar */
+  max-width: 100%;
   margin: 0 10px;
 }
 
@@ -185,8 +185,12 @@ img {
   font-family: "AkiraExpanded";
   text-align: center;
   color: #121212;
-  margin-bottom: 50px;
   margin-top: 50px;
+}
+
+.fa-cart-shopping {
+  font-size: 24px;
+  color: black;
 }
 
 .text-pakaian {
@@ -300,16 +304,16 @@ img {
 
 .circle-img {
   font-family: "Montserrat", serif;
-  width: 100px; /* Sesuaikan dengan ukuran yang Anda inginkan */
-  height: 100px; /* Sesuaikan dengan ukuran yang Anda inginkan */
-  border-radius: 50%; /* Membuat gambar menjadi lingkaran */
-  overflow: hidden; /* Mengatasi gambar yang keluar dari lingkaran */
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%; 
+  overflow: hidden; 
 }
 
 .circle-img img {
-  width: 100%; /* Mengisi area gambar secara penuh dalam lingkaran */
-  height: auto; /* Mengatur tinggi gambar agar tetap proporsional */
-  object-fit: cover; /* Memastikan gambar tetap terlihat baik di dalam lingkaran */
+  width: 100%;
+  height: auto; 
+  object-fit: cover;
 }
 
 /* banner section */
@@ -518,6 +522,8 @@ img {
 }
 
 .map-section {
+  margin-left: 20rem;
+  margin-right: 20rem;
   grid-template-columns: 2fr 1fr;
   display: grid;
 }
