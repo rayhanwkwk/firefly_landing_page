@@ -149,7 +149,7 @@ img {
 .button {
   background-color: #ffffff; /* Warna latar belakang awal */
   transition: all 0.3s;
-  color: #121212; /* Warna teks awal */
+  color: #ffffff; /* Warna teks awal */
 }
 
 .kotak {
@@ -505,7 +505,7 @@ img {
   }
 }
 .map {
-  width: 500px;
+  width: 10px;
   height: 350px;
   position: relative; /* Tambahkan ini */
 }
