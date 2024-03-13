@@ -158,12 +158,6 @@ img {
   justify-content: center;
   align-items: center;
 }
-
-.shesh {
-  position: relative;
-  margin: 10px;
-}
-
 .centered-text {
   font-family: 'Montserrat', serif;
   font-size: 35px;
@@ -174,6 +168,32 @@ img {
   transform: translate(-50%, -50%);
   text-align: center;
   line-height: 0.8;
+}
+
+.kartu {
+  --blur: 16px;
+  --size: clamp(300px, 50vmin, 600px);
+  width: var(--size);
+  aspect-ratio: 4 / 3;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden; /* Menggunakan overflow: hidden pada kartu untuk membatasi gambar ke dalam kotak */
+  color: #000;
+  transform: translateZ(0);
+}
+
+.kartu__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+  transition: transform 0.2s;
+  overflow: hidden; /* Menggunakan overflow: hidden pada gambar untuk membatasi transformasi ke dalam kotak */
+}
+
+
+.kartu:is(:hover, :focus-visible) {
+  --hover: 1;
 }
 
 .button-dark {
@@ -350,6 +370,7 @@ img {
 .collection-column {
   margin: 20px 0;
 }
+
 
 .collection-card {
   display: flex;
@@ -699,17 +720,17 @@ footer .container .contact .info li a {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 kolom dengan lebar yang sama */
-  grid-gap: 50px; /* Jarak antar kolom */
-  max-width: 800px; /* Maksimum lebar grid container */
-  margin: 20px auto; /* Posisi grid container di tengah */
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 50px;
+  max-width: 800px;
+  margin: 20px auto;
   margin-bottom: 50px;
 }
 
 .grid-item img {
   max-width: 100%;
   height: auto;
-  display: block; /* Membuat gambar menjadi block element untuk menghindari celah putih */
+  display: block;
 }
 
 .sponsorship-title {
