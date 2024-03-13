@@ -170,30 +170,69 @@ img {
   line-height: 0.8;
 }
 
-.kartu {
-  --blur: 16px;
+.card {
+  --blur: 3px;
   --size: clamp(300px, 50vmin, 600px);
-  width: var(--size);
   aspect-ratio: 4 / 3;
   position: relative;
   border-radius: 2rem;
-  overflow: hidden; /* Menggunakan overflow: hidden pada kartu untuk membatasi gambar ke dalam kotak */
+  overflow: hidden;
   color: #000;
   transform: translateZ(0);
+  filter: blur(0); /* Set default blur to 0 */
+  padding: 10px;
 }
 
-.kartu__img {
+.card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
   transition: transform 0.2s;
-  overflow: hidden; /* Menggunakan overflow: hidden pada gambar untuk membatasi transformasi ke dalam kotak */
 }
 
+.card:hover .card__img,
+.card:focus-visible .card__img {
+  filter: blur(var(--blur));
+}
 
-.kartu:is(:hover, :focus-visible) {
+.card:is(:hover, :focus-visible) {
   --hover: 1;
+}
+
+.card__text {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--blur);
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.3s ease; /* Add transition for opacity */
+}
+
+.card:hover .card__text,
+.card:focus-visible .card__text {
+  opacity: 1; /* Change opacity to 1 on hover/focus */
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Menggeser gradasi hitam ke atas */
+  left: 0;
+  width: 100%;
+  height: 20px;
+  transition: opacity 0.3s ease; /* Menambahkan transisi untuk opacity */
+  opacity: 0; /* Set opacity awal menjadi 0 */
+}
+
+.card:hover::after,
+.card:focus-visible::after {
+  opacity: 1; /* Mengubah opacity menjadi 1 saat dihover atau di-focus */
 }
 
 .button-dark {
@@ -368,8 +407,15 @@ img {
 }
 
 .collection-column {
-  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Membuat item berada di tengah */
 }
+
+.collection-card {
+  margin: 10px; /* Menambahkan jarak antara item */
+}
+
 
 
 .collection-card {
